@@ -3,13 +3,16 @@ import { createCategoria, getCategorias, getOneCategoria, deleteOnCategoria, upd
 
 const router = Router();
 
-// /api/categorias
-router.post('/',createCategoria);
-router.get('/',getCategorias);
-
-// /api/categorias/:id_categoria
-router.get('/:id_categoria',getOneCategoria);
-router.delete('/:id_categoria',deleteOnCategoria);
-router.put('/:id_categoria',updateCategorias);
+/*CRUD category*/
+//Create category, requires body, return categoty || error
+router.post('/create', createCategoria);
+//Get all categorys, return categotys || null
+router.get('/get', getCategorias);
+//Get one category, requires parameter id_categoria, return categoty || null
+router.get('/get/:id_categoria', getOneCategoria);
+//Update category, requires parameter id_categoria, return 1 || 0
+router.put('/update/:id_categoria', updateCategorias);
+//Delete category, requires parameter id_categoria, return 1 || 0
+router.delete('/delete/:id_categoria', deleteOnCategoria);
 
 export default router;

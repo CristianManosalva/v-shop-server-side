@@ -7,8 +7,11 @@ const Categoria = sequelize.define('categoria',{
         type: Sequelize.INTEGER,
         primaryKey: true
     },
-    nombre:{
+    nombre_categoria:{
         type: Sequelize.STRING(30)
+    },
+    linkimagen:{
+        type: Sequelize.STRING(100)
     }
 },{
     timestamps: false,

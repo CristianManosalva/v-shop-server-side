@@ -6,8 +6,11 @@ const SubCategoria = sequelize.define('subcategoria',{
         type: Sequelize.INTEGER,
         primaryKey: true
     },
-    nombre:{
-        type: Sequelize.STRING(30)
+    nombre_subcategoria:{
+        type: Sequelize.STRING(50)
+    },
+    linkimagen:{
+        type: Sequelize.STRING(100)
     },
     id_categoria: {
         type: Sequelize.INTEGER
