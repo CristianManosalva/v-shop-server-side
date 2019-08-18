@@ -148,7 +148,6 @@ export async function deleteUsuario(req, res) {
 //Esta funcion obtiene admin segun clave y nick
 export async function logUsuario(req, res) {
     const { nick, clave } = req.body;
-    console.log("nick from client",nick);
     try {
         const usuario = await Usuario.findOne({
             attributes: ['tipo_usuario'],
@@ -166,6 +165,28 @@ export async function logUsuario(req, res) {
         console.log(e);
         res.json({
             message:"Error 505",
+            data: {}
+        });
+    }
+}
+
+export async function checkNick(req, res) {
+    const { nick } = req.params;
+    try {
+        const usuario = await Usuario.findOne({
+            where: {
+                nick: nick
+            }
+        });
+        if(usuario){
+            return res.send(true);
+        }else{
+            return res.json(false);
+        }
+    } catch (e) {
+        console.log(e);
+        res.json({
+            message:"Error 506",
             data: {}
         });
     }

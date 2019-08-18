@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { logUsuario, createUsuario, deleteUsuario, getOneUsuario, updateUsuario, listUsuarios } from '../controllers/dao.usuario';
+import { logUsuario, createUsuario, deleteUsuario, getOneUsuario, updateUsuario, listUsuarios, checkNick } from '../controllers/dao.usuario';
 const router = Router();
 
 /*CRUD usuario*/
@@ -15,8 +15,11 @@ router.put('/update/:id_usuario', updateUsuario);
 router.delete('/delete/:id_usuario', deleteUsuario);
 
 /*functions*/
-//requires nick and pass, return tipo_usuarios || null
+//get login; requires nick and pass; return tipo_usuarios || null
 router.get('/login', logUsuario);
+//check existing nick
+router.get('/check-nick/:nick', checkNick);
+
 
 
 
