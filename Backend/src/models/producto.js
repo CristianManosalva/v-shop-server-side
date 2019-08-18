@@ -2,36 +2,21 @@ import Sequelize from 'sequelize';
 import { sequelize } from '../database/database';
 
 const Producto = sequelize.define('producto',{
-    codigo_producto:{
+    id_producto:{
         type: Sequelize.INTEGER,
         primaryKey: true
     },
-    nombre:{
-        type: Sequelize.STRING(30)
-    },
-    imagen_url:{
-        type: Sequelize.STRING(100)
-    },
-    empresa_fabricante:{
-        type: Sequelize.STRING(30)
+    nombre_producto:{
+        type: Sequelize.STRING(20)
     },
     descripcion:{
-        type: Sequelize.TEXT
+        type: Sequelize.STRING(100)
     },
-    precio_unitario:{
+    marca:{
+        type: Sequelize.STRING(20)
+    },
+    precio:{
         type: Sequelize.FLOAT
-    },
-    descuento:{
-        type: Sequelize.FLOAT
-    },
-    iva:{
-        type: Sequelize.FLOAT
-    },
-    unidades_disponibles:{
-        type: Sequelize.INTEGER
-    },
-    detalles:{
-        type: Sequelize.TEXT
     },
     id_subcategoria:{
         type: Sequelize.INTEGER

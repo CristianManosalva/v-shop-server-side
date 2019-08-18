@@ -108,6 +108,10 @@ CREATE TABLE producto
     FOREIGN KEY (id_subcategoria) REFERENCES subcategoria(id_subcategoria) ON DELETE CASCADE
 );
 
+INSERT INTO producto(nombre_producto,descripcion,marca,precio,id_subcategoria)
+	VALUES('Xiaomi mi 9T','good phone','Xiaomi','300','5'),
+		('LG UHD','good tv','LG','500','11');
+
 -----------------------------------------------------------------------------------------------------------------
 
 DROP TABLE IF EXISTS imagenes CASCADE;
