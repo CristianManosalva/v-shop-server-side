@@ -1,0 +1,9 @@
+#Folders
+Backend/node_modules
+Backend/node_modules/*
+Backend/node_modules/**
+Backend/dist/
+Backend/package-lock.json
+
+#files
+
