@@ -122,7 +122,7 @@ CREATE TABLE imagenes
     id_producto INTEGER NOT NULL,
     ruta VARCHAR(200),
     FOREIGN KEY (id_producto) REFERENCES producto(id_producto) ON DELETE CASCADE,
-    PRIMARY KEY (id_imagen,id_producto)
+    PRIMARY KEY (id_imagen)
 );
 
 -----------------------------------------------------------------------------------------------------------------------
