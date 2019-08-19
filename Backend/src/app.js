@@ -9,6 +9,8 @@ import usersRoutes from './routes/usuarios';
 import imagenesRoutes from './routes/imagenes';
 import comentariosRoutes from './routes/comentarios';
 import descuentosRoutes from './routes/descuentos';
+import catalogosRoutes from './routes/catalogos';
+import inventarioRoutes from './routes/inventario_catalogo_productosC';
 
 //initialization
 const app = express();
@@ -18,6 +20,8 @@ app.use(morgan('dev'));
 app.use(json());
 
 //routes
+app.use('/api/catalogos',catalogosRoutes);
+app.use('/api/catalogos/inventario',inventarioRoutes);
 app.use('/api/productos',productoRoutes);
 app.use('/api/productos/imagenes',imagenesRoutes);
 app.use('/api/productos/comentarios',comentariosRoutes);

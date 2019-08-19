@@ -1,5 +1,6 @@
 import Sequelize from 'sequelize';
 import { sequelize } from '../database/database';
+import  Catalogo  from './catalogo';
 
 //Asi se especifica un modelo de tabla usando el ORM
 const Usuario = sequelize.define('usuario', {
@@ -46,7 +47,10 @@ const Usuario = sequelize.define('usuario', {
 },{
     freezeTableName: true,
     timestamps: false
-})
+});
+
+Usuario.hasOne(Catalogo,{foreingkey: 'id_gerente', sourcekey:'id_usuario'});
+Catalogo.belongsTo(Usuario,{foreingkey: 'id_gerente', sourcekey:'id_usuario'});
 
 
 export default Usuario;
