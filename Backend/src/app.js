@@ -7,6 +7,8 @@ import categoriasRoutes from './routes/categorias';
 import subcategoriasRoutes from './routes/subcategorias';
 import usersRoutes from './routes/usuarios';
 import imagenesRoutes from './routes/imagenes';
+import comentariosRoutes from './routes/comentarios';
+import descuentosRoutes from './routes/descuentos';
 
 //initialization
 const app = express();
@@ -18,6 +20,8 @@ app.use(json());
 //routes
 app.use('/api/productos',productoRoutes);
 app.use('/api/productos/imagenes',imagenesRoutes);
+app.use('/api/productos/comentarios',comentariosRoutes);
+app.use('/api/descuentos',descuentosRoutes);
 app.use('/api/categorias',categoriasRoutes);
 app.use('/api/subcategorias',subcategoriasRoutes);
 app.use('/usuario',usersRoutes);

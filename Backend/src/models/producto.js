@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize';
 import { sequelize } from '../database/database';
 import Imagenes from './imagen';
+import Comentario from './comentario';
 
 const Producto = sequelize.define('producto',{
     id_producto:{
@@ -29,5 +30,8 @@ const Producto = sequelize.define('producto',{
 
 Producto.hasMany(Imagenes,{foreingkey: 'id_producto', sourcekey:'id_producto'});
 Imagenes.belongsTo(Producto,{foreingkey: 'id_producto', sourcekey:'id_producto'});
+
+Producto.hasMany(Comentario,{foreingkey: 'id_producto', sourcekey:'id_producto'});
+Comentario.belongsTo(Producto,{foreingkey: 'id_producto', sourcekey:'id_producto'});
 
 export default Producto;

@@ -28,7 +28,7 @@ export async function crearProducto(req, res) {
 export async function getProductos(req, res) {
     try {
         const productos = await Producto.findAll({
-            attributes: ['nombre_producto', 'descripcion', 'marca', 'precio', 'id_subcategoria']
+            attributes: ['id_producto','nombre_producto', 'descripcion', 'marca', 'precio', 'id_subcategoria']
         });
         return res.json(productos);
     } catch (e) {
